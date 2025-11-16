@@ -245,5 +245,5 @@ test('should_CreateTicket_When_DataIsValid', () => { });
 **Note** : Ces conventions sont vivantes et peuvent évoluer. Toute modification doit être discutée et approuvée par l'équipe.
 
 *Dernière mise à jour : Janvier 2025*
-*Contributeurs : [Votre nom] & [Collaborateur]*
+*Contributeurs : Dimitri & ChatGPT (Documentation)*
 

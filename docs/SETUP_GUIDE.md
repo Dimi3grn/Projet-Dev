@@ -33,8 +33,8 @@ Si Node.js n'est pas installé :
 ### 1. Cloner le repository
 
 ```bash
-git clone <url-du-repository>
-cd ticket-management-system
+git clone https://github.com/Dimi3grn/Projet-Dev
+cd bonne-pratiques-dev
 ```
 
 ### 2. Installer les dépendances

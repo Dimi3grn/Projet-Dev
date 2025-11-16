@@ -60,9 +60,9 @@ Merci de votre intérêt pour contribuer au projet ! Ce document explique commen
 
 ```bash
 # Fork sur GitHub, puis :
-git clone https://github.com/VOTRE-USERNAME/ticket-management-system.git
-cd ticket-management-system
-git remote add upstream https://github.com/ORIGINAL/ticket-management-system.git
+git clone https://github.com/VOTRE-USERNAME/bonne-pratiques-dev.git
+cd bonne-pratiques-dev
+git remote add upstream https://github.com/Dimi3grn/Projet-Dev.git
 ```
 
 ### 2. Créer une branche

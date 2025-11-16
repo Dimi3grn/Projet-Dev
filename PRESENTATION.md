@@ -298,7 +298,7 @@ npm test
 
 ### "Comment travaillez-vous en équipe ?"
 
-> "J'ai simulé un projet collaboratif avec des commentaires d'équipe, une PR exemplaire, et un guide de contribution. J'utilise des branches thématiques, des commits atomiques, et des messages clairs. La documentation facilite l'onboarding."
+> "J'ai collaboré avec ChatGPT pour la documentation technique. J'utilise des branches thématiques, des commits atomiques, et des messages clairs. La documentation facilite l'onboarding. Cette collaboration démontre ma capacité à utiliser efficacement les outils modernes d'IA pour améliorer la productivité."
 
 ---
 

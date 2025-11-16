@@ -8,8 +8,8 @@
 **Titre** : Les messages du chat ne s'affichent pas dans le bon ordre  
 **Sévérité** : Moyenne  
 **Statut** : ✅ Résolu  
-**Rapporté par** : Collaborateur  
-**Assigné à** : Votre Nom  
+**Rapporté par** : ChatGPT  
+**Assigné à** : Dimitri  
 **Date** : 15 Janvier 2025
 
 ---
@@ -462,7 +462,7 @@ Ce débogage suit la **méthode scientifique en 7 étapes** :
 
 **Statut final** : ✅ **RÉSOLU**
 
-*Rapport rédigé par : Votre Nom*  
-*Revu par : Collaborateur*  
+*Rapport rédigé par : Dimitri*  
+*Revu par : ChatGPT*  
 *Date de résolution : 15 Janvier 2025*
 

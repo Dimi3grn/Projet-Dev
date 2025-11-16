@@ -6,8 +6,8 @@
 
 ```bash
 # 1. Cloner le projet
-git clone <url-du-repo>
-cd ticket-management-system
+git clone https://github.com/Dimi3grn/Projet-Dev
+cd bonne-pratiques-dev
 
 # 2. Installer les dépendances
 npm install

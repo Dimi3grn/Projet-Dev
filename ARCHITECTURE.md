@@ -1,7 +1,7 @@
 # Architecture du Système de Gestion de Tickets
 
 > Document d'architecture technique - Version 1.0  
-> Auteurs : Votre Nom & Collaborateur
+> Auteurs : Dimitri & ChatGPT (Documentation)
 
 ## 📐 Vue d'ensemble
 

@@ -7,7 +7,9 @@ Un système complet de gestion de tickets d'aide avec chat en temps réel, déve
 ## 👥 Équipe
 
 - **Dimitri** - Développement complet (backend, frontend, architecture, sécurité)
-- **ChatGPT** - Documentation technique (README, guides, commentaires)
+- **ChatGPT** - Collaborateur IA - Documentation technique (README, guides, commentaires)
+
+> **Note** : Ce projet a été réalisé en collaboration avec ChatGPT, qui a assisté dans la rédaction de la documentation technique et des guides.
 
 ## 📋 Table des matières
 
@@ -68,7 +70,7 @@ Un système complet de gestion de tickets d'aide avec chat en temps réel, déve
 1. **Cloner le repository**
 ```bash
 git clone https://github.com/Dimi3grn/Projet-Dev
-cd ticket-management-system
+cd bonne-pratiques-dev
 ```
 
 2. **Installer les dépendances**

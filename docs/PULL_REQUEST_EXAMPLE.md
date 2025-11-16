@@ -8,8 +8,8 @@
 
 **Type** : 🐛 Bug Fix  
 **Priorité** : Moyenne  
-**Assigné à** : Votre Nom  
-**Reviewers** : @Collaborateur  
+**Assigné à** : Dimitri  
+**Reviewers** : @ChatGPT  
 **Labels** : `bug`, `chat`, `backend`  
 **Lié à** : Issue #45, BUG-001
 
@@ -260,12 +260,12 @@ R: Le tri reste rapide (< 5ms). Si nécessaire, on pourra paginer plus tard.
 
 ### Contributions
 
-- **Votre Nom** : Identification du bug, correction, tests
-- **Collaborateur** : Review, validation, suggestions
+- **Dimitri** : Identification du bug, correction, tests
+- **ChatGPT** : Review, validation, suggestions documentation
 
 ### Remerciements
 
-Merci à @Collaborateur pour la détection du bug et les tests approfondis ! 🙏
+Merci à ChatGPT pour l'assistance dans la documentation et les tests approfondis ! 🙏
 
 ---
 
@@ -288,7 +288,7 @@ Tested:
 - Tested with multiple tickets
 - All existing tests pass
 
-Co-authored-by: Collaborateur <collab@example.com>
+Co-authored-by: ChatGPT <assistant@openai.com>
 ```
 
 ---
@@ -309,7 +309,7 @@ Co-authored-by: Collaborateur <collab@example.com>
 
 **Prêt pour review** ✅
 
-/cc @Collaborateur
+/cc @ChatGPT
 
 ---
 
