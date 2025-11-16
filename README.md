@@ -339,15 +339,6 @@ En cas de problème, consulter [BUG_REPORT.md](./docs/BUG_REPORT.md) pour un exe
 - Vérifier que le frontend et backend sont sur le même domaine
 - Vérifier la configuration CORS dans `server/index.js`
 
-## 📄 Licence
-
-MIT
-
-## 🙏 Remerciements
-
-- Module "Bonnes pratiques DEV" par Cyril Rodrigues
-- Communauté Node.js et Express
-- Tous les contributeurs open-source
 
 ---
 
