@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin - Tickets</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>👨‍💼 Dashboard Admin</h1>
+      <div class="user-info">
+        <span class="user-email" id="user-email"></span>
+        <button class="btn btn-secondary" id="logout-btn">Déconnexion</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="alert-container"></div>
+
+    <!-- Statistiques -->
+    <div class="stats-grid" id="stats-container">
+      <div class="stat-card">
+        <div class="stat-value" id="total-tickets">0</div>
+        <div class="stat-label">Total Tickets</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="open-tickets">0</div>
+        <div class="stat-label">Tickets Ouverts</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="closed-tickets">0</div>
+        <div class="stat-label">Tickets Fermés</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="total-users">0</div>
+        <div class="stat-label">Utilisateurs</div>
+      </div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="card">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <select id="filter-status" class="form-select" style="width: auto;">
+          <option value="">Tous les statuts</option>
+          <option value="open">Ouverts</option>
+          <option value="in-progress">En cours</option>
+          <option value="closed">Fermés</option>
+        </select>
+        <select id="filter-category" class="form-select" style="width: auto;">
+          <option value="">Toutes les catégories</option>
+          <option value="technical">Technique</option>
+          <option value="billing">Facturation</option>
+          <option value="account">Compte</option>
+          <option value="other">Autre</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Liste des tickets -->
+    <div id="tickets-container">
+      <div class="loading">Chargement des tickets...</div>
+    </div>
+
+    <!-- Modal de chat -->
+    <div id="chat-modal" class="hidden" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;">
+      <div class="card" style="width: 90%; max-width: 700px; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column;">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="flex: 1;">
+            <h2 class="card-title" id="modal-ticket-title"></h2>
+            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.25rem;" id="modal-ticket-info"></p>
+            <div style="margin-top: 0.75rem;">
+              <label style="font-size: 0.875rem; margin-right: 0.5rem;">Statut:</label>
+              <select id="status-select" class="form-select" style="width: auto; display: inline-block;">
+                <option value="open">Ouvert</option>
+                <option value="in-progress">En cours</option>
+                <option value="closed">Fermé</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="close-modal-btn">✕</button>
+        </div>
+
+        <div class="chat-container">
+          <div class="chat-messages" id="chat-messages">
+            <div class="loading">Chargement des messages...</div>
+          </div>
+          <div class="chat-input-container">
+            <input
+              type="text"
+              class="form-input chat-input"
+              id="message-input"
+              placeholder="Répondre au client..."
+              maxlength="2000"
+            >
+            <button class="btn btn-primary" id="send-message-btn">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
+

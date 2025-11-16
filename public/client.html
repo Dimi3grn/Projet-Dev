@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Tickets - Client</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>🎫 Mes Tickets</h1>
+      <div class="user-info">
+        <span class="user-email" id="user-email"></span>
+        <button class="btn btn-secondary" id="logout-btn">Déconnexion</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="alert-container"></div>
+
+    <!-- Bouton créer ticket -->
+    <div style="margin-bottom: 2rem;">
+      <button class="btn btn-primary" id="create-ticket-btn">
+        ➕ Créer un nouveau ticket
+      </button>
+    </div>
+
+    <!-- Formulaire de création (caché par défaut) -->
+    <div id="create-ticket-form" class="card hidden">
+      <div class="card-header" style="background: white; border-bottom: 2px solid var(--border-color);">
+        <h2 class="card-title" style="color: var(--text-primary);">Nouveau Ticket</h2>
+      </div>
+      <form id="ticket-form">
+        <div class="form-group">
+          <label class="form-label" for="title">Titre *</label>
+          <input
+            type="text"
+            id="title"
+            class="form-input"
+            placeholder="Résumé du problème"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="category">Catégorie *</label>
+          <select id="category" class="form-select" required>
+            <option value="">Sélectionner une catégorie</option>
+            <option value="technical">Technique</option>
+            <option value="billing">Facturation</option>
+            <option value="account">Compte</option>
+            <option value="other">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="description">Description *</label>
+          <textarea
+            id="description"
+            class="form-textarea"
+            placeholder="Décrivez votre problème en détail..."
+            required
+          ></textarea>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem;">
+          <button type="submit" class="btn btn-primary">Créer le ticket</button>
+          <button type="button" class="btn btn-secondary" id="cancel-create-btn">Annuler</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Liste des tickets -->
+    <div id="tickets-container">
+      <div class="loading">Chargement des tickets...</div>
+    </div>
+
+    <!-- Modal de chat -->
+    <div id="chat-modal" class="hidden" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;">
+      <div class="card" style="width: 90%; max-width: 700px; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column;">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 class="card-title" id="modal-ticket-title"></h2>
+            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.25rem;" id="modal-ticket-status"></p>
+          </div>
+          <button class="btn btn-secondary" id="close-modal-btn">✕</button>
+        </div>
+
+        <div class="chat-container">
+          <div class="chat-messages" id="chat-messages">
+            <div class="loading">Chargement des messages...</div>
+          </div>
+          <div class="chat-input-container">
+            <input
+              type="text"
+              class="form-input chat-input"
+              id="message-input"
+              placeholder="Écrivez votre message..."
+              maxlength="2000"
+            >
+            <button class="btn btn-primary" id="send-message-btn">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/client.js"></script>
+</body>
+</html>
+

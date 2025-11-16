@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Système de Tickets</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card" style="max-width: 400px; margin: 100px auto;">
+      <div class="card-header" style="background: white; border-bottom: 2px solid var(--border-color);">
+        <h1 class="card-title text-center" style="padding-left: 0; color: var(--text-primary);">🎫 Système de Tickets</h1>
+        <p class="text-center" style="color: var(--text-primary); opacity: 0.7; margin-top: 0.5rem; font-weight: 500;">
+          Connectez-vous pour accéder à votre espace
+        </p>
+      </div>
+
+      <div id="alert-container"></div>
+
+      <!-- Formulaire de connexion -->
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="votre@email.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Mot de passe</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="••••••••"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Se connecter
+        </button>
+      </form>
+
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <p style="color: var(--text-primary); opacity: 0.8; font-size: 0.875rem; font-weight: 500;">
+          Pas encore de compte ?
+          <a href="#" id="show-register" style="color: var(--primary-color); text-decoration: none; font-weight: 700;">
+            S'inscrire
+          </a>
+        </p>
+      </div>
+
+      <!-- Formulaire d'inscription (caché par défaut) -->
+      <form id="register-form" class="hidden" style="margin-top: 1rem;">
+        <div class="form-group">
+          <label class="form-label" for="register-email">Email</label>
+          <input
+            type="email"
+            id="register-email"
+            class="form-input"
+            placeholder="votre@email.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-password">Mot de passe</label>
+          <input
+            type="password"
+            id="register-password"
+            class="form-input"
+            placeholder="••••••••"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Créer un compte
+        </button>
+
+        <button type="button" id="show-login" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;">
+          Retour à la connexion
+        </button>
+      </form>
+
+      <!-- Info compte admin -->
+      <div style="margin-top: 2rem; padding: 1rem; background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; font-size: 0.75rem;">
+        <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">🔑 Compte admin par défaut :</p>
+        <p style="color: var(--text-primary); font-weight: 500;">Email: <code style="background: var(--background-light); padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-weight: 600;">admin@support.com</code></p>
+        <p style="color: var(--text-primary); font-weight: 500;">Mot de passe: <code style="background: var(--background-light); padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-weight: 600;">Admin123!</code></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
+
