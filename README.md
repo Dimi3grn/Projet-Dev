@@ -131,7 +131,7 @@ Ouvrir votre navigateur à : `http://localhost:3000`
 
 Rejoignez notre serveur Discord pour suivre les notifications en temps réel et échanger avec l'équipe !
 
-[![Rejoindre Discord](https://discord.gg/fyVDcKmKKR)]
+![Rejoindre Discord](https://discord.gg/fyVDcKmKKR)
 
 ### 🔔 Notifications automatiques
 
