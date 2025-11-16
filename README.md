@@ -9,7 +9,8 @@ Un système complet de gestion de tickets d'aide avec chat en temps réel, déve
 - **Dimitri** - Développement complet (backend, frontend, architecture, sécurité)
 - **ChatGPT** - Collaborateur IA - Documentation technique (README, guides, commentaires)
 
-> **Note** : Ce projet a été réalisé en collaboration avec ChatGPT, qui a assisté dans la rédaction de la documentation technique et des guides.
+> **Note** : Ce projet a été réalisé en collaboration avec ChatGPT, qui a assisté dans la rédaction de la documentation technique et des guides, car mon collaborateur de base ne s'est jamais présenté en cours.
+
 
 ## 📋 Table des matières
 
