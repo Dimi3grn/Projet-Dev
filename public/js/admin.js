@@ -1,8 +1,4 @@
-/**
- * Interface admin - Dashboard et gestion des tickets
- *
- * @author Collaborateur
- */
+// Interface admin - Dashboard et gestion des tickets
 
 // Protection de la page
 protectPage('admin');
@@ -24,18 +20,14 @@ const sendMessageBtn = document.getElementById('send-message-btn');
 const messageInput = document.getElementById('message-input');
 const statusSelect = document.getElementById('status-select');
 
-/**
- * Initialise la page
- */
+// Initialise la page
 function init() {
   userEmailEl.textContent = user.email;
   loadStatistics();
   loadTickets();
 }
 
-/**
- * Charge les statistiques
- */
+// Charge les statistiques
 async function loadStatistics() {
   try {
     const stats = await api.getStatistics();
@@ -48,9 +40,7 @@ async function loadStatistics() {
   }
 }
 
-/**
- * Charge tous les tickets
- */
+// Charge tous les tickets
 async function loadTickets() {
   try {
     allTickets = await api.getTickets();
@@ -60,9 +50,7 @@ async function loadTickets() {
   }
 }
 
-/**
- * Applique les filtres
- */
+// Applique les filtres
 function applyFilters() {
   const statusFilter = filterStatus.value;
   const categoryFilter = filterCategory.value;
@@ -76,9 +64,7 @@ function applyFilters() {
   renderTickets();
 }
 
-/**
- * Affiche les tickets
- */
+// Affiche les tickets
 function renderTickets() {
   if (filteredTickets.length === 0) {
     ticketsContainer.innerHTML = `
@@ -121,10 +107,7 @@ function renderTickets() {
   });
 }
 
-/**
- * Ouvre le chat d'un ticket
- * @param {string} ticketId - ID du ticket
- */
+// Ouvre le chat d'un ticket
 async function openTicketChat(ticketId) {
   currentTicketId = ticketId;
   const ticket = allTickets.find((t) => t.id === ticketId);
@@ -149,9 +132,7 @@ async function openTicketChat(ticketId) {
   await loadMessages();
 }
 
-/**
- * Charge les messages d'un ticket
- */
+// Charge les messages d'un ticket
 async function loadMessages() {
   try {
     const messages = await api.getMessages(currentTicketId);
@@ -161,10 +142,7 @@ async function loadMessages() {
   }
 }
 
-/**
- * Affiche les messages
- * @param {Array} messages - Liste des messages
- */
+// Affiche les messages
 function renderMessages(messages) {
   const chatMessages = document.getElementById('chat-messages');
 
@@ -199,9 +177,7 @@ function renderMessages(messages) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-/**
- * Envoie un message
- */
+// Envoie un message
 async function sendMessage() {
   const content = messageInput.value.trim();
 
@@ -218,9 +194,7 @@ async function sendMessage() {
   }
 }
 
-/**
- * Met à jour le statut d'un ticket
- */
+// Met à jour le statut d'un ticket
 async function updateTicketStatus() {
   const newStatus = statusSelect.value;
 
@@ -260,4 +234,3 @@ statusSelect.addEventListener('change', updateTicketStatus);
 
 // Initialiser
 init();
-

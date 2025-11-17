@@ -1,10 +1,6 @@
-/**
- * Module de persistance des données dans des fichiers JSON
- * Permet de sauvegarder et charger les données entre les redémarrages
- *
- * @author Votre Nom & Collaborateur
- * @note Utilise fs/promises pour des opérations asynchrones non-bloquantes
- */
+// Module de persistance des données dans des fichiers JSON
+// Permet de sauvegarder et charger les données entre les redémarrages
+// Utilise fs/promises pour des opérations asynchrones non-bloquantes
 
 import fs from 'fs/promises';
 import path from 'path';

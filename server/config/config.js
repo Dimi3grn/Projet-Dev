@@ -1,9 +1,5 @@
-/**
- * Configuration centralisée de l'application
- * Charge les variables d'environnement et expose les configurations
- *
- * @author Votre Nom
- */
+// Configuration centralisée de l'application
+// Charge les variables d'environnement et expose les configurations
 
 import dotenv from 'dotenv';
 

@@ -1,10 +1,6 @@
-/**
- * Couche de persistance des données en mémoire
- * En production, remplacer par une vraie base de données
- *
- * @author Votre Nom & Collaborateur
- * @note Utilise le pattern Singleton pour garantir une seule instance
- */
+// Couche de persistance des données en mémoire
+// En production, remplacer par une vraie base de données
+// Utilise le pattern Singleton pour garantir une seule instance
 
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcryptjs';

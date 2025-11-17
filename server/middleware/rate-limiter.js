@@ -1,9 +1,5 @@
-/**
- * Middleware de rate limiting
- * Protège contre les abus et attaques par force brute
- *
- * @author Collaborateur
- */
+// Middleware de rate limiting
+// Protège contre les abus et attaques par force brute
 
 import rateLimit from 'express-rate-limit';
 import { config } from '../config/config.js';

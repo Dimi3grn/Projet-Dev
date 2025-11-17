@@ -1,8 +1,4 @@
-/**
- * Gestion de l'authentification (page de connexion)
- *
- * @author Votre Nom
- */
+// Gestion de l'authentification (page de connexion)
 
 // Rediriger si déjà connecté
 if (api.getToken()) {
@@ -19,18 +15,13 @@ const registerForm = document.getElementById('register-form');
 const showRegisterLink = document.getElementById('show-register');
 const showLoginBtn = document.getElementById('show-login');
 
-/**
- * Affiche un message d'erreur
- * @param {string} message - Message d'erreur
- */
+// Affiche un message d'erreur
 function showError(message) {
   const container = document.getElementById('alert-container');
   container.innerHTML = `<div class="alert alert-error">${message}</div>`;
 }
 
-/**
- * Gère la soumission du formulaire de connexion
- */
+// Gère la soumission du formulaire de connexion
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -51,9 +42,7 @@ loginForm.addEventListener('submit', async (e) => {
   }
 });
 
-/**
- * Gère la soumission du formulaire d'inscription
- */
+// Gère la soumission du formulaire d'inscription
 registerForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -68,20 +57,15 @@ registerForm.addEventListener('submit', async (e) => {
   }
 });
 
-/**
- * Affiche le formulaire d'inscription
- */
+// Affiche le formulaire d'inscription
 showRegisterLink.addEventListener('click', (e) => {
   e.preventDefault();
   loginForm.classList.add('hidden');
   registerForm.classList.remove('hidden');
 });
 
-/**
- * Affiche le formulaire de connexion
- */
+// Affiche le formulaire de connexion
 showLoginBtn.addEventListener('click', () => {
   registerForm.classList.add('hidden');
   loginForm.classList.remove('hidden');
 });
-

@@ -1,8 +1,4 @@
-/**
- * Interface client - Gestion des tickets
- *
- * @author Votre Nom & Collaborateur
- */
+// Interface client - Gestion des tickets
 
 // Protection de la page
 protectPage('client');
@@ -24,17 +20,13 @@ const closeModalBtn = document.getElementById('close-modal-btn');
 const sendMessageBtn = document.getElementById('send-message-btn');
 const messageInput = document.getElementById('message-input');
 
-/**
- * Initialise la page
- */
+// Initialise la page
 function init() {
   userEmailEl.textContent = user.email;
   loadTickets();
 }
 
-/**
- * Charge les tickets de l'utilisateur
- */
+// Charge les tickets de l'utilisateur
 async function loadTickets() {
   try {
     tickets = await api.getTickets();
@@ -44,9 +36,7 @@ async function loadTickets() {
   }
 }
 
-/**
- * Affiche les tickets
- */
+// Affiche les tickets
 function renderTickets() {
   if (tickets.length === 0) {
     ticketsContainer.innerHTML = `
@@ -92,10 +82,7 @@ function renderTickets() {
   });
 }
 
-/**
- * Ouvre le chat d'un ticket
- * @param {string} ticketId - ID du ticket
- */
+// Ouvre le chat d'un ticket
 async function openTicketChat(ticketId) {
   currentTicketId = ticketId;
   const ticket = tickets.find((t) => t.id === ticketId);
@@ -117,9 +104,7 @@ async function openTicketChat(ticketId) {
   await loadMessages();
 }
 
-/**
- * Charge les messages d'un ticket
- */
+// Charge les messages d'un ticket
 async function loadMessages() {
   try {
     const messages = await api.getMessages(currentTicketId);
@@ -129,10 +114,7 @@ async function loadMessages() {
   }
 }
 
-/**
- * Affiche les messages
- * @param {Array} messages - Liste des messages
- */
+// Affiche les messages
 function renderMessages(messages) {
   const chatMessages = document.getElementById('chat-messages');
 
@@ -167,9 +149,7 @@ function renderMessages(messages) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-/**
- * Envoie un message
- */
+// Envoie un message
 async function sendMessage() {
   const content = messageInput.value.trim();
 
@@ -239,4 +219,3 @@ messageInput.addEventListener('keypress', (e) => {
 
 // Initialiser
 init();
-

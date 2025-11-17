@@ -1,9 +1,5 @@
-/**
- * Point d'entrée principal du serveur
- * Initialise Express et configure tous les middlewares
- *
- * @author Votre Nom & Collaborateur
- */
+// Point d'entrée principal du serveur
+// Initialise Express et configure tous les middlewares
 
 import express from 'express';
 import helmet from 'helmet';

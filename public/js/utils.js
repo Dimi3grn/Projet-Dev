@@ -1,15 +1,7 @@
-/**
- * Utilitaires frontend
- * Fonctions réutilisables pour l'interface
- *
- * @author Collaborateur
- */
+// Utilitaires frontend
+// Fonctions réutilisables pour l'interface
 
-/**
- * Formate une date en format lisible
- * @param {string} dateString - Date ISO
- * @returns {string} Date formatée
- */
+// Formate une date en format lisible
 function formatDate(dateString) {
   const date = new Date(dateString);
   const now = new Date();
@@ -38,11 +30,7 @@ function formatDate(dateString) {
   });
 }
 
-/**
- * Formate l'heure d'un message
- * @param {string} dateString - Date ISO
- * @returns {string} Heure formatée
- */
+// Formate l'heure d'un message
 function formatTime(dateString) {
   const date = new Date(dateString);
   return date.toLocaleTimeString('fr-FR', {
@@ -51,11 +39,7 @@ function formatTime(dateString) {
   });
 }
 
-/**
- * Affiche un message d'alerte
- * @param {string} message - Message à afficher
- * @param {string} type - Type d'alerte ('success' ou 'error')
- */
+// Affiche un message d'alerte
 function showAlert(message, type = 'error') {
   const container = document.getElementById('alert-container');
   if (!container) {
@@ -75,11 +59,7 @@ function showAlert(message, type = 'error') {
   }, 5000);
 }
 
-/**
- * Récupère le badge HTML pour un statut
- * @param {string} status - Statut du ticket
- * @returns {string} HTML du badge
- */
+// Récupère le badge HTML pour un statut
 function getStatusBadge(status) {
   const labels = {
     open: 'Ouvert',
@@ -90,11 +70,7 @@ function getStatusBadge(status) {
   return `<span class="badge badge-${status}">${labels[status] || status}</span>`;
 }
 
-/**
- * Récupère le badge HTML pour une catégorie
- * @param {string} category - Catégorie du ticket
- * @returns {string} HTML du badge
- */
+// Récupère le badge HTML pour une catégorie
 function getCategoryBadge(category) {
   const labels = {
     technical: 'Technique',
@@ -106,17 +82,12 @@ function getCategoryBadge(category) {
   return `<span class="badge badge-${category}">${labels[category] || category}</span>`;
 }
 
-/**
- * Vérifie si l'utilisateur est authentifié
- * @returns {boolean} True si authentifié
- */
+// Vérifie si l'utilisateur est authentifié
 function isAuthenticated() {
   return !!api.getToken();
 }
 
-/**
- * Redirige vers la page appropriée selon le rôle
- */
+// Redirige vers la page appropriée selon le rôle
 function redirectToDashboard() {
   const user = api.getUser();
   if (!user) {
@@ -131,10 +102,7 @@ function redirectToDashboard() {
   }
 }
 
-/**
- * Protège une page (nécessite authentification)
- * @param {string} requiredRole - Rôle requis (optionnel)
- */
+// Protège une page (nécessite authentification)
 function protectPage(requiredRole = null) {
   if (!isAuthenticated()) {
     window.location.href = '/';
@@ -147,27 +115,17 @@ function protectPage(requiredRole = null) {
   }
 }
 
-/**
- * Échappe les caractères HTML pour éviter XSS
- * @param {string} text - Texte à échapper
- * @returns {string} Texte échappé
- */
+// Échappe les caractères HTML pour éviter XSS
 function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
 }
 
-/**
- * Tronque un texte à une longueur maximale
- * @param {string} text - Texte à tronquer
- * @param {number} maxLength - Longueur maximale
- * @returns {string} Texte tronqué
- */
+// Tronque un texte à une longueur maximale
 function truncate(text, maxLength) {
   if (text.length <= maxLength) {
     return text;
   }
   return text.substring(0, maxLength) + '...';
 }
-

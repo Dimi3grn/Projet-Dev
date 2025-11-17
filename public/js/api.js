@@ -1,69 +1,42 @@
-/**
- * Module API - Gère toutes les communications avec le backend
- * Centralise les appels HTTP et la gestion des tokens
- *
- * @author Votre Nom & Collaborateur
- */
+// Module API - Gère toutes les communications avec le backend
+// Centralise les appels HTTP et la gestion des tokens
 
 const API_BASE_URL = '/api';
 
-/**
- * Classe pour gérer les appels API
- */
+// Classe pour gérer les appels API
 class API {
-  /**
-   * Récupère le token JWT du localStorage
-   * @returns {string|null} Token ou null
-   */
+  // Récupère le token JWT du localStorage
   getToken() {
     return localStorage.getItem('token');
   }
 
-  /**
-   * Sauvegarde le token JWT
-   * @param {string} token - Token à sauvegarder
-   */
+  // Sauvegarde le token JWT
   setToken(token) {
     localStorage.setItem('token', token);
   }
 
-  /**
-   * Supprime le token JWT
-   */
+  // Supprime le token JWT
   removeToken() {
     localStorage.removeItem('token');
   }
 
-  /**
-   * Récupère les données utilisateur du localStorage
-   * @returns {Object|null} Données utilisateur ou null
-   */
+  // Récupère les données utilisateur du localStorage
   getUser() {
     const userStr = localStorage.getItem('user');
     return userStr ? JSON.parse(userStr) : null;
   }
 
-  /**
-   * Sauvegarde les données utilisateur
-   * @param {Object} user - Données utilisateur
-   */
+  // Sauvegarde les données utilisateur
   setUser(user) {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-  /**
-   * Supprime les données utilisateur
-   */
+  // Supprime les données utilisateur
   removeUser() {
     localStorage.removeItem('user');
   }
 
-  /**
-   * Effectue une requête HTTP
-   * @param {string} endpoint - Endpoint de l'API
-   * @param {Object} options - Options de la requête
-   * @returns {Promise<Object>} Réponse de l'API
-   */
+  // Effectue une requête HTTP
   async request(endpoint, options = {}) {
     const url = `${API_BASE_URL}${endpoint}`;
     const token = this.getToken();
@@ -98,12 +71,7 @@ class API {
 
   // ========== AUTH ==========
 
-  /**
-   * Connexion utilisateur
-   * @param {string} email - Email
-   * @param {string} password - Mot de passe
-   * @returns {Promise<Object>} Données utilisateur et token
-   */
+  // Connexion utilisateur
   async login(email, password) {
     const data = await this.request('/auth/login', {
       method: 'POST',
@@ -115,12 +83,7 @@ class API {
     return data.data;
   }
 
-  /**
-   * Inscription utilisateur
-   * @param {string} email - Email
-   * @param {string} password - Mot de passe
-   * @returns {Promise<Object>} Données utilisateur et token
-   */
+  // Inscription utilisateur
   async register(email, password) {
     const data = await this.request('/auth/register', {
       method: 'POST',
@@ -132,9 +95,7 @@ class API {
     return data.data;
   }
 
-  /**
-   * Déconnexion utilisateur
-   */
+  // Déconnexion utilisateur
   logout() {
     this.removeToken();
     this.removeUser();
@@ -143,11 +104,7 @@ class API {
 
   // ========== TICKETS ==========
 
-  /**
-   * Crée un nouveau ticket
-   * @param {Object} ticketData - Données du ticket
-   * @returns {Promise<Object>} Ticket créé
-   */
+  // Crée un nouveau ticket
   async createTicket(ticketData) {
     const data = await this.request('/tickets', {
       method: 'POST',
@@ -156,31 +113,19 @@ class API {
     return data.data;
   }
 
-  /**
-   * Récupère les tickets de l'utilisateur
-   * @returns {Promise<Array>} Liste des tickets
-   */
+  // Récupère les tickets de l'utilisateur
   async getTickets() {
     const data = await this.request('/tickets');
     return data.data;
   }
 
-  /**
-   * Récupère un ticket par ID
-   * @param {string} ticketId - ID du ticket
-   * @returns {Promise<Object>} Ticket
-   */
+  // Récupère un ticket par ID
   async getTicket(ticketId) {
     const data = await this.request(`/tickets/${ticketId}`);
     return data.data;
   }
 
-  /**
-   * Met à jour le statut d'un ticket
-   * @param {string} ticketId - ID du ticket
-   * @param {string} status - Nouveau statut
-   * @returns {Promise<Object>} Ticket mis à jour
-   */
+  // Met à jour le statut d'un ticket
   async updateTicketStatus(ticketId, status) {
     const data = await this.request(`/tickets/${ticketId}/status`, {
       method: 'PATCH',
@@ -189,10 +134,7 @@ class API {
     return data.data;
   }
 
-  /**
-   * Récupère les statistiques (admin)
-   * @returns {Promise<Object>} Statistiques
-   */
+  // Récupère les statistiques (admin)
   async getStatistics() {
     const data = await this.request('/tickets/stats/overview');
     return data.data;
@@ -200,22 +142,13 @@ class API {
 
   // ========== CHAT ==========
 
-  /**
-   * Récupère les messages d'un ticket
-   * @param {string} ticketId - ID du ticket
-   * @returns {Promise<Array>} Liste des messages
-   */
+  // Récupère les messages d'un ticket
   async getMessages(ticketId) {
     const data = await this.request(`/chat/${ticketId}/messages`);
     return data.data;
   }
 
-  /**
-   * Envoie un message
-   * @param {string} ticketId - ID du ticket
-   * @param {string} content - Contenu du message
-   * @returns {Promise<Object>} Message créé
-   */
+  // Envoie un message
   async sendMessage(ticketId, content) {
     const data = await this.request(`/chat/${ticketId}/messages`, {
       method: 'POST',
